@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PostVotingBox from './PostVotingBox';
 import PostContent from './PostContent';
-import './Post.css';
+import './CSS/Post.css';
 
 function Post({ index, post, vote }) {
   return (
