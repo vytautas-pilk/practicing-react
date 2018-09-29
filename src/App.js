@@ -1,21 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import PostList from './PostList';
+import './CSS/App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class App extends React.Component {
+	state = {
+		posts: this.props.data
+	}
+
+	vote = (index, isUpvote) => {
+		let posts = [...this.state.posts];
+		if (isUpvote) {
+			posts[index].votes += 1;
+		} else {
+			posts[index].votes -= 1;
+		};
+		this.setState({	posts });
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<PostList vote={this.vote} posts={this.state.posts}/>
+			</div>
+		);
+	}
 }
+
+App.propTypes = {
+	data: PropTypes.array.isRequired
+};
 
 export default App;
