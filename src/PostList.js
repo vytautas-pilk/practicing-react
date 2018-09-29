@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post';
 import PropTypes from 'prop-types';
-import './PostList.css';
+import './CSS/PostList.css';
 
 function PostList({ posts, vote }) {
   return (
