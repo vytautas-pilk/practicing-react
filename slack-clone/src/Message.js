@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Message({ message, children }) {
   return (
@@ -14,6 +15,11 @@ function Message({ message, children }) {
       </div>
     </div>
   );
+}
+
+Message.propTypes = {
+  message: PropTypes.object.isRequired,
+  children: PropTypes.node
 }
 
 export default Message;

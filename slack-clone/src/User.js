@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const User = ({ user, onWindowChange, currentWindow }) => (
   <li className={`User ${currentWindow == user ? "active" : ""}`}>
@@ -8,5 +9,11 @@ const User = ({ user, onWindowChange, currentWindow }) => (
     </button>
   </li>
 );
+
+User.propTypes = {
+  user: PropTypes.string.isRequired,
+  onWindowChange: PropTypes.func.isRequired,
+  currentWindow: PropTypes.string.isRequired
+};
 
 export default User;

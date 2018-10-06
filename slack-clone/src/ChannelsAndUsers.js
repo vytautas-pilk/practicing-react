@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './STYLES/ChannelsAndUsers.css';
 import Channel from './Channel';
 import User from './User';
@@ -34,5 +35,12 @@ function ChannelsAndUsers ({ channels, users, handleWindowChange,
     </div>
   );
 }
+
+ChannelsAndUsers.propTypes = {
+  channels: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired,
+  handleWindowChange: PropTypes.func.isRequired,
+  currentWindow: PropTypes.string.isRequired
+};
 
 export default ChannelsAndUsers;

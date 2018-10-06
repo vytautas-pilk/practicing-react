@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Message from './Message';
 
 function ChatScreen ({ currentWindow, channels, users }) {
@@ -30,5 +31,11 @@ function ChatScreen ({ currentWindow, channels, users }) {
     </div>
   );
 }
+
+ChatScreen.propTypes = {
+  currentWindow: PropTypes.string.isRequired,
+  channels: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired
+};
 
 export default ChatScreen;

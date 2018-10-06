@@ -1,4 +1,4 @@
-let channelMessages = {
+let channels = {
   "general": [
     {
       channel: "general",
@@ -80,4 +80,4 @@ let channelMessages = {
 
 let users = ["Dracula", "Harry Potter", "Gandalf", "Luke Skywalker", "Lord Voldemort"];
 
-export { users, channelMessages };
+export { users, channels };

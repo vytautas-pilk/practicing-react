@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ChatInput({ handleNewMessage, handleInput, value }) {
   return (
@@ -9,5 +10,11 @@ function ChatInput({ handleNewMessage, handleInput, value }) {
     </form>
   );
 }
+
+ChatInput.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+  handleNewMessage: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+};
 
 export default ChatInput;

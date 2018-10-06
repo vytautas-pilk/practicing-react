@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ChannelsAndUsers from './ChannelsAndUsers';
 import DisplayScreen from './DisplayScreen';
 import './STYLES/App.css';
@@ -9,7 +10,7 @@ class App extends React.Component {
     this.state = {
       currentWindow: "general",
       users: this.props.users,
-      channelMessages: this.props.channelMessages,
+      channels: this.props.channels,
       newMessage: ""
     }
     this.handleWindowChange = this.handleWindowChange.bind(this);
@@ -39,10 +40,10 @@ class App extends React.Component {
       time: new Date().toLocaleString('lt-LT', {timeZone: 'Europe/Vilnius'}),
       message: this.state.newMessage
     };
-    let messages = [...this.state.channelMessages[currentWindow], message];
+    let messages = [...this.state.channels[currentWindow], message];
     if (this.state.newMessage.length > 0) {
       this.setState({
-        channelMessages: {...this.state.channelMessages, [currentWindow]: messages},
+        channels: {...this.state.channels, [currentWindow]: messages},
         newMessage: ""
       });
     }
@@ -58,7 +59,7 @@ class App extends React.Component {
   renderMessages() {
     // Builds two different messages arrays: one for channel messages and one 
     // for user messages. They get displayed slightly different
-    let channels = this.state.channelMessages;
+    let channels = this.state.channels;
     let currentWindow = this.state.currentWindow;
     let channelMessages = [];
     let userMessages = [];
@@ -75,7 +76,7 @@ class App extends React.Component {
     return (
       <main className="App">
         <ChannelsAndUsers 
-          channels={this.state.channelMessages} 
+          channels={this.state.channels} 
           currentWindow={this.state.currentWindow}
           users={this.state.users}
           handleWindowChange={this.handleWindowChange}/>
@@ -89,6 +90,11 @@ class App extends React.Component {
       </main>
     );
   }
+}
+
+App.propTypes = {
+  users: PropTypes.array.isRequired,
+  channels: PropTypes.object.isRequired
 }
 
 export default App;
