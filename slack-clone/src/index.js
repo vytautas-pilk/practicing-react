@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './STYLES/index.css';
 import App from './App';
 import { channelMessages, users } from './initialData';
 import registerServiceWorker from './registerServiceWorker';
