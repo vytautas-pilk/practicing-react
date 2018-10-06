@@ -48,11 +48,6 @@ class App extends React.Component {
     }
   }
 
-  handleToggle = () => {
-    const nav = document.querySelector(".Channels-Users");
-    nav.classList.toggle("responsive");
-  }
-
   handleWindowChange(event) {
     // Sets the correct channel/user window to display
     this.setState({
