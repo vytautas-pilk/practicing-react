@@ -1,0 +1,49 @@
+.Channels,
+.Users {
+  height: 50%;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+.Channels h1,
+.Users h1 {
+  font-size: 1em;
+}
+
+.Channel.active,
+.User.active {
+  background-color: #FA0;
+  color: #FFF;
+}
+
+.Channel-button.active,
+.User-button.active {
+  color: #222;
+}
+
+.Channels-list,
+.Users-list {
+  padding-left: 1em;
+}
+
+.Channel,
+.User {
+  list-style: none;
+  font-size: 1.2em;
+  margin: 0.2em 0;
+  border-radius: 0.25em;
+}
+
+.Channel-button,
+.User-button {
+  border: none;
+  padding: 0.2em;
+  padding-left: 0;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 1em;
+  font-weight: normal;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}

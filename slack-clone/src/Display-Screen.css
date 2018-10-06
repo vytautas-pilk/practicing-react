@@ -1,0 +1,84 @@
+.Display-Screen {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #304776;
+}
+
+.Chat-Screen {
+  padding: 0.5em;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin-bottom: 0.5em;
+}
+
+.Channel-empty-alert {
+  align-self: center;
+  color: #999;
+}
+
+.Message-Input {
+  margin: auto 0.5em 0.5em;
+}
+
+.Message-Input input {
+  width: 100%;
+  border: 1px solid #AAA;
+  padding: 0.75em;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+}
+
+.Message-Input input:focus {
+  border-color: #5CA0E6;
+  box-shadow: 0 0 0.2em #5CA0E6;
+}
+
+.Message-input-disabled {
+  border: 1px solid #AAA;
+  border-radius: 0.25em;
+  color: #666;
+  text-align: center;
+  padding: 0.5em;
+  display: inline-block;
+  align-self: center;
+}
+
+.Message {
+  display: flex;
+  margin: 0.25em 0;
+}
+
+.Message-author-avatar {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #999;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+}
+
+.Message-preview {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+
+.Message-author {
+  font-weight: bold;
+}
+
+.Message-date {
+  margin: 0 0.5em;
+  color: #777;
+}
+
+.Message-channel {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.Message-text {
+  margin-top: 0.25em;
+}
