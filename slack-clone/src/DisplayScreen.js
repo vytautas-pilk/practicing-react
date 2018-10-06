@@ -1,5 +1,5 @@
 import React from 'react';
-import './Display-Screen.css';
+import './STYLES/Display-Screen.css';
 import ChatScreen from './ChatScreen';
 import ChatInput from './ChatInput';
 

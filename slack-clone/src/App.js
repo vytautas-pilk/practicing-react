@@ -1,7 +1,7 @@
 import React from 'react';
 import ChannelsAndUsers from './ChannelsAndUsers';
 import DisplayScreen from './DisplayScreen';
-import './App.css';
+import './STYLES/App.css';
 
 class App extends React.Component {
   constructor(props) {

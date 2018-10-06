@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChannelsAndUsers.css';
+import './STYLES/ChannelsAndUsers.css';
 import Channel from './Channel';
 import User from './User';
 
