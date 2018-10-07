@@ -1,6 +1,6 @@
 This is a very simplified slack clone. It has channels, users and channel chat options. It was created with create-react-app, bellow are instructions how to clone and run it.
 
-https://im4.ezgif.com/tmp/ezgif-4-18b822b1202c.gif
+![](slack.gif)
 
 Cheers!
 
