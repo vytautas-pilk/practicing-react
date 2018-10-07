@@ -5,9 +5,9 @@ import Channel from './Channel';
 import User from './User';
 
 function ChannelsAndUsers ({ channels, users, handleWindowChange,
-  currentWindow }) {
+  currentWindow, responsive }) {
   return (
-    <div className="Channels-Users">
+    <div className={`Channels-Users ${responsive && "Responsive"}`}>
       <section className="Channels">
         <h1>CHANNELS</h1>
         <ul className="Channels-list">

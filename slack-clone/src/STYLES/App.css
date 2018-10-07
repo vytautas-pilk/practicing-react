@@ -18,3 +18,52 @@
 .Display-Screen {
   flex: 5;
 }
+
+.Responsive-Nav {
+  position: fixed;
+  align-self: center;
+  color: #FFF;
+  background-color: #304776;
+  opacity: 0.9;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  padding: 0.25em;
+  margin-top: 0.2em;
+  width: 90%;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width: 756px) {
+  .App {
+    width: 100%;
+    flex-direction: column;
+  }
+  .Channels-Users {
+    display: none;
+  }
+  .Display-Screen {
+    border: none;
+    margin-top: 2em;
+  }
+  .Chat-Screen {
+    height: calc(100vh - 6em);
+  }
+  .Responsive-Nav {
+    display: initial;
+  }
+  .Channels-Users.Responsive {
+    display: initial;
+    position: absolute;
+    top: 2.1em;
+    left: 5%;
+    width: 90%;
+    height: 65%;
+    overflow: auto;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    opacity: 0.9;
+  }
+}

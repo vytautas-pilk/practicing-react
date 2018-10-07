@@ -11,11 +11,13 @@ class App extends React.Component {
       currentWindow: "general",
       users: this.props.users,
       channels: this.props.channels,
-      newMessage: ""
+      newMessage: "",
+      responsive: false
     }
     this.handleWindowChange = this.handleWindowChange.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleNewMessage = this.handleNewMessage.bind(this);
+    this.toggleNav = this.toggleNav.bind(this);
   }
 
   componentDidUpdate() {
@@ -53,6 +55,13 @@ class App extends React.Component {
     // Sets the correct channel/user window to display
     this.setState({
       currentWindow: event.target.value,
+      responsive: false
+    });
+  }
+
+  toggleNav() {
+    this.setState({
+      responsive: !this.state.responsive
     });
   }
 
@@ -75,7 +84,11 @@ class App extends React.Component {
   render() {
     return (
       <main className="App">
-        <ChannelsAndUsers 
+        <div className="Responsive-Nav" onClick={this.toggleNav}>
+          {this.state.currentWindow} &#8595;
+        </div>
+        <ChannelsAndUsers
+          responsive={this.state.responsive}
           channels={this.state.channels} 
           currentWindow={this.state.currentWindow}
           users={this.state.users}
