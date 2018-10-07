@@ -1,3 +1,9 @@
+This is a very simplified slack clone. It has channels, users and channel chat options. It was created with create-react-app, bellow are instructions how to clone and run it.
+
+https://im4.ezgif.com/tmp/ezgif-4-18b822b1202c.gif
+
+Cheers!
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
