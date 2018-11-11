@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 function CalculatorResults(props) {
     const {betType, backStake, backOdds, layOdds, layCommision} = props;
     let layStake;
-
+    
+    // we need different values for different types of events stored in layStake
     if (betType === "normal") {
         layStake = Number(
             (backOdds / (layOdds - (layCommision / 100)) * backStake)

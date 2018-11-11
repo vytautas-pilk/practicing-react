@@ -31,12 +31,15 @@ class Acca extends React.Component {
     }
 
     checkScreenWidth = () => {
-        this.setState({
+        this.setState({ // check if the screen width has changed and setState
             isMobile: window.innerWidth > 899 ? false : true 
         });
     }
     
     updateAcca = () => {
+        // update two things here: total back odds and required lay stakes
+
+        // variables
         const acca = this.state.acca;
         const totalBackOdds = acca.reduce((total, leg) => {
             return Number(((leg.backOdds || 1) * total).toFixed(3));
@@ -45,6 +48,7 @@ class Acca extends React.Component {
             (acca[acca.length - 1].layOdds -
             (acca[acca.length - 1].commision / 100))).toFixed(2));
         
+        // this method returns a list of required lay stakes
         const newAcca = acca.reduceRight(
             (newAcca, leg, ind, array) => {
                 let prevLeg = array[ind + 1];
@@ -72,12 +76,14 @@ class Acca extends React.Component {
         const legName = event.currentTarget.parentNode.getAttribute("name");
         const legInput = event.currentTarget.getAttribute("name");
         const value = event.currentTarget.value;
-        if (legInput === "backStake") {
+        // conditional statement needed to check if the current event target
+        // has its' state on the first level or deeper in the state object
+        if (legInput === "backStake") { // first level
             this.setState({
                 [legInput]: value
             }, this.updateAcca);
         } else {
-            this.setState(prevState => ({
+            this.setState(prevState => ({ // second level
                 acca: prevState.acca.map(
                 leg => {
                     if (leg.name === legName) {
@@ -86,11 +92,11 @@ class Acca extends React.Component {
                         return leg
                     }
                 }),
-            }), this.updateAcca);
+            }), this.updateAcca); // update needed here to calculate correct values
         }
     }
 
-    handleAddLeg = () => {
+    handleAddLeg = () => { // 
         const legCount = this.state.legCount;
         const name = `leg${legCount + 1}`;
         const leg = {
@@ -108,6 +114,8 @@ class Acca extends React.Component {
     }
     
     handleRemoveLeg = (event) => {
+        // after removing a leg from the array recalculation is done
+        // to collect correct values for every single leg
         const legName = event.currentTarget.parentNode.getAttribute("name");
         const legIndex = this.state.acca.findIndex(leg => 
             leg.name === legName);
@@ -133,7 +141,8 @@ class Acca extends React.Component {
                     removeLeg={this.handleRemoveLeg}
                 />
         );
-
+        
+        // this is for wide screens only
         const inputs = ["Date", "Match", "Back Odds", "Lay Odds", "Comm.%",
             "Lay Stake"];
 

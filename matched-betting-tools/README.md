@@ -1,7 +1,3 @@
-This project is the first project where I used react-router to make my first SPA. It's an app to help people in the UK and Ireland do the thing called "matched betting" with a couple of tools available. This is a hobby project, however, it displays a variety of JS and react techniques to achieve this. 
-The app is deployed [here](https://matched-betting-tools.herokuapp.com/).
-Bellow is a generic create-react-app ReadMe.
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
